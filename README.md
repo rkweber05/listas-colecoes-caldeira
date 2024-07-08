@@ -59,3 +59,26 @@ Dentro do meu foreach, utilizar uma verificação chamada **instanceof: "se ele 
 Toda variável de objeto é na verdade uma referência a esse objeto que foi alocado na memória.
 
 **Exemplo p2 = p1;** Ou seja, ambos se comunicam e fazem referência a um objeto, se o p1 tiver valor, mas o p2 faz referência com ele, e é alterado, então o resultado será o valor setado no p2.
+
+# Ordenação de listas
+
+A lista vem na forma em que instancioamos.
+
+**Collections.sort(); =** é uma classe que esta no java.util.Collections, é um método estático. Ordena por ordem alfabética. Precisamos sempre passar um critério clara para fazer a comparação.
+
+Usamos tambem o compareTo, que faz a comparação entre dois tipos;
+
+Para utilizar o **compareTo**, é necessário implementar na classe um Comparable<Tipo>, e implementando o metodo compareTo;
+
+Exemplo: 
+
+`@Overridepublic int compareTo(Produto p) { return this.getNome().compareTo(p.getNome());}`
+
+**OBS: Documentação Comparable (é um comparador)** https://www.alura.com.br/artigos/ordenando-colecoes-com-comparable-e-comparator
+
+# Outros critérios de ordenação.
+
+Usar método **sort.(Comparator.comparing(** o que deseja comparar**)),** ou seja, usar método sort, dentro dele colocar o que deve ser comparado.
+
+**Exemplo:** 
+`produtos.sort(Comparator.comparing(Produto::getPreco));`
